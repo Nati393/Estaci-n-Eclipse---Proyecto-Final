@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Jugador.h"
 #include "Habitacion.h"
+#include "Item.h"
 
 using namespace std;
 
@@ -27,9 +28,16 @@ int main() {
     ubicacionActual->mostrarDescripcion();
     ubicacionActual->mostrarSalidas();
 
-    // Inventario
-    leia.agregarItem("Kit Médico");
-    leia.agregarItem("Linterna");
+    //Sistema de items
+    leia.agregarItem(new Consumible("Kit Medico", 30, 0));
+    leia.agregarItem(new Consumible("Bateria", 0, 25));
+    leia.agregarItem(new Arma("Pistola Laser", 15));
+    leia.agregarItem(new Armadura("Traje Reforzado", 5, false));
+
+    leia.mostrarInventario();
+
+   // Probar uso de items
+    leia.usarItem("Kit Medico");
     leia.mostrarInventario();
 
     cout << "\n=== SISTEMA INICIALIZADO CORRECTAMENTE ===" << endl;
