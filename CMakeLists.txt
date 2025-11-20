@@ -10,4 +10,6 @@ add_executable(ProyectoFinal main.cpp
         Habitacion.h
         Habitacion.cpp
         Direccion.h
-        Entidad.cpp)
+        Entidad.cpp
+        Item.cpp
+        Item.h)
