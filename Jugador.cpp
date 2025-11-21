@@ -1,4 +1,5 @@
 #include "Jugador.h"
+#include "Habitacion.h"
 #include <iostream>
 
 Jugador::Jugador(std::string nombre)
@@ -97,5 +98,25 @@ void Jugador::reducirEnergia(int cantidad) {
 void Jugador::ganarExperiencia(int cantidad) {
     // Solo se muestra la experiencia ganada
     std::cout << "¡Ganas " << cantidad << " puntos de experiencia!" << std::endl;
+}
+bool Jugador::tieneItem(std::string nombreItem) const {
+    for (const auto& item : inventario) {
+        if (item->getNombre() == nombreItem) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void Jugador::recogerObjetos(Habitacion* habitacion) {
+    // mostramos los objetos disponibles
+    std::cout << "Objetos disponibles en la habitación:" << std::endl;
+}
+
+void Jugador::explorarHabitacion(Habitacion* habitacion) {
+    habitacion->mostrarDescripcion();
+    habitacion->mostrarSalidas();
+    habitacion->mostrarEnemigos();
+    habitacion->mostrarObjetos();
 }
 

@@ -18,4 +18,6 @@ add_executable(ProyectoFinal main.cpp
         ServidorCorrompido.h
         ServidorCorrompido.cpp
         Parasito.h
-        Parasito.cpp)
+        Parasito.cpp
+        NucleoCorrupto.h
+        NucleoCorrupto.cpp)
