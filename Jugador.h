@@ -1,6 +1,7 @@
 #ifndef JUGADOR_H
 #define JUGADOR_H
 
+#include "Habitacion.h"
 #include "Entidad.h"
 #include "Item.h"
 #include <vector>
@@ -29,7 +30,9 @@ public:
     void mostrarInventario() const;
     void reducirEnergia(int cantidad);
     void ganarExperiencia(int cantidad);
-
+    bool tieneItem(std::string nombreItem) const;
+    void recogerObjetos(Habitacion* habitacion);
+    void explorarHabitacion(Habitacion* habitacion);
 
     // Getters
     int getEnergia() const;
