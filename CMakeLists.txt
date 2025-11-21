@@ -10,4 +10,12 @@ add_executable(ProyectoFinal main.cpp
         Habitacion.h
         Habitacion.cpp
         Direccion.h
-        Entidad.cpp)
+        Entidad.cpp
+        Item.h
+        Item.cpp
+        Enemigo.h
+        Enemigo.cpp
+        ServidorCorrompido.h
+        ServidorCorrompido.cpp
+        Parasito.h
+        Parasito.cpp)

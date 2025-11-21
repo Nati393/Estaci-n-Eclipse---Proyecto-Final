@@ -2,6 +2,7 @@
 #define JUGADOR_H
 
 #include "Entidad.h"
+#include "Item.h"
 #include <vector>
 #include <string>
 
@@ -9,23 +10,34 @@ class Jugador : public Entidad {
 private:
     int energia;
     int nivel;
-    std::vector<std::string> inventario;
+    std::vector<Item*> inventario;
+    Arma* armaEquipada;
+    Armadura* armaduraEquipada;
 
 public:
     Jugador(std::string nombre);
-    
+    ~Jugador(); // Necesitamos destructor para limpiar items
+
     // Implementación de métodos abstractos
     void atacar(Entidad* objetivo) override;
     void recibirDanio(int cantidad) override;
-    
+
     // Métodos específicos del jugador
     void mostrarEstado() const;
-    void agregarItem(std::string item);
+    void agregarItem(Item* item);
+    void usarItem(std::string nombreItem);
     void mostrarInventario() const;
-    
+    void reducirEnergia(int cantidad);
+    void ganarExperiencia(int cantidad);
+
+
     // Getters
     int getEnergia() const;
     int getNivel() const;
+
+    // Métodos para equipar
+    void equiparArma(Arma* arma);
+    void equiparArmadura(Armadura* armadura);
 };
 
 #endif
