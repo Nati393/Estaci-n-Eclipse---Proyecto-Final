@@ -54,6 +54,7 @@ void Habitacion::mostrarEnemigos() const {
         std::cout << "Enemigos en la habitación:" << std::endl;
         for (const auto& enemigo : enemigos) {
             enemigo->mostrarEstado();
+            std::cout << std::endl;
         }
     }
 }
@@ -73,6 +74,10 @@ Habitacion* Habitacion::getSalida(Direccion direccion) const {
         return it->second;
     }
     return nullptr;
+}
+
+std::string Habitacion::getNombre() const {
+    return nombre;
 }
 
 bool Habitacion::tieneEnemigos() const {

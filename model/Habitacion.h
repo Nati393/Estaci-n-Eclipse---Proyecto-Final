@@ -31,12 +31,15 @@ public:
     void mostrarObjetos() const;
     Habitacion* getSalida(Direccion direccion) const;
     bool tieneEnemigos() const;
+
+    std::string getNombre() const;
     bool getRequiereLlave() const;
     bool getTieneRadiacion() const;
 
-    // Para el sistema de combate
     std::vector<Enemigo*>& getEnemigos();
     void eliminarEnemigo(Enemigo* enemigo);
+
+    std::vector<Item*>& getObjetos() { return objetos; }
 };
 
 #endif

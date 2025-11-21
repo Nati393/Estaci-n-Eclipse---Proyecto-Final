@@ -21,5 +21,5 @@ void ServidorCorrompido::atacar(Entidad* objetivo) {
 
 void ServidorCorrompido::habilidadEspecial(Jugador* jugador) {
     std::cout << "¡SOBRECARGA! Pierdes " << danioSobrecarga << " puntos de energía." << std::endl;
-    jugador->reducirEnergia(danioSobrecarga);  // AÑADIR ESTA LÍNEA
+    jugador->reducirEnergia(danioSobrecarga);
 }
